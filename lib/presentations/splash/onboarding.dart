@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shopping/app/locale/SAppLocalizations.dart';
 import 'package:shopping/app/theme/SAppTypography.dart';
 import 'package:shopping/app/theme/SColors.dart';
 import 'package:shopping/main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -29,57 +29,85 @@ class _OnBoardingState extends State<OnBoardingStatefulWidget> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      // SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-      setState(() {
-        statusBarHeight = MediaQuery.of(context).viewPadding.top;
-        print("status bar height: $statusBarHeight");
-      });
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    // });
   }
 
   @override
   Widget build(BuildContext context) {
-    // String header = SAppLocalizations.of(context)?.getText("onboarding") ?? "Chào mừng bạn đến với siêu ứng dụng mua sắm";
-    String header = "Chào mừng bạn đến với siêu ứng dụng mua sắm";
-
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 0,
+        elevation: 0,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark, // for Android
           statusBarBrightness: Brightness.light, // for iOS
         ),
-        elevation: 0,
       ),
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: Text(
-                header,
-                style: mobileHeadlineLargeM.merge(
-                  const TextStyle(
-                    color: colorNeutral900,
-                  ),
-                ),
-                textAlign: TextAlign.center,
+            createWelcomeMessage(),
+            Expanded(
+              child: Image.asset(
+                'assets/images/onboarding.png',
+                fit: BoxFit.scaleDown,
+                width: double.infinity,
+                height: double.infinity,
               ),
             ),
-            // SizedBox.expand(
-            //   child: Image.asset(
-            //     'assets/images/bg_onboarding.png',
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            Text(
-              "Bat dau"
-            )
+            createStartButton(),
           ],
         )
       )
+    );
+  }
+
+  Widget createWelcomeMessage() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, right: 16),
+      child: Text(
+        AppLocalizations.of(context)?.onBoardingWelcome ?? "",
+        style: mobileHeadlineLargeM.merge(
+          const TextStyle(
+            color: colorNeutral900,
+          ),
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  Widget createStartButton() {
+    return ElevatedButton(
+      style: ButtonStyle(
+          overlayColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.pressed)) {
+              return Colors.lightBlue.withOpacity(0.5);
+            }
+
+            return null;
+          }),
+          foregroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.values)) {
+              return Colors.lightBlue;
+            }
+            return null;
+          }),
+          padding: MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 16, vertical: 8)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ))
+      ),
+      onPressed: () {
+
+      },
+      child: Text(
+        AppLocalizations.of(context)?.buttonStart ?? "",
+        style: mobileTitleMediumSemiBold.merge(const TextStyle(color: Colors.white)),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

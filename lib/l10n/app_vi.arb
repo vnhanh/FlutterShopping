@@ -1,0 +1,13 @@
+{
+  "onBoardingWelcome": "Chào mừng đến ứng dụng mua săm tốt nhất Việt Nam",
+  "@onBoardingWelcome": {
+    "description": "welcome message of On-Boarding screen",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  },
+  "buttonStart": "Bắt đầu"
+}

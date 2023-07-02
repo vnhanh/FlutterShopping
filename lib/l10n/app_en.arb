@@ -1,6 +1,7 @@
 {
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  }
+  "onBoardingWelcome": "Welcome to the best shopping app in Vietnam",
+  "@onBoardingWelcome": {
+    "description": "welcome message of On-Boarding screen"
+  },
+  "buttonStart": "Start"
 }

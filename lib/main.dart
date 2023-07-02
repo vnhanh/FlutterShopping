@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shopping/presentations/splash/onboarding.dart';
 import 'package:shopping/presentations/splash/splash.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
-  // runApp(const SplashScreen());
-  runApp(const OnBoardingScreen());
+  runApp(const SplashScreen());
+  // runApp(const OnBoardingScreen());
 }
 
 class SAppWrapperLayout extends StatefulWidget {
@@ -23,9 +22,7 @@ class _SAppWrapperState extends State<SAppWrapperLayout> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // locale: const Locale("vn"),
-      // localizationsDelegates: const [SAppLocalizationsDelegate()],
-      // supportedLocales: const [Locale('vn'), Locale('en')],
+      locale: const Locale("vi"),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(

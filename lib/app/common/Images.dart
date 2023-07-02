@@ -1,2 +1,2 @@
 
-const SPLASH = 'assets/images/bg_splash.png';
+const SPLASH = 'assets/images/splash.png';
