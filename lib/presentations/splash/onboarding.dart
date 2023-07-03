@@ -4,6 +4,7 @@ import 'package:shopping/app/theme/SAppTypography.dart';
 import 'package:shopping/app/theme/SColors.dart';
 import 'package:shopping/main.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shopping/presentations/auth/login/login.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -50,14 +51,20 @@ class _OnBoardingState extends State<OnBoardingStatefulWidget> {
           children: [
             createWelcomeMessage(),
             Expanded(
-              child: Image.asset(
-                'assets/images/onboarding.png',
-                fit: BoxFit.scaleDown,
-                width: double.infinity,
-                height: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+                child: Image.asset(
+                  'assets/images/onboarding.png',
+                  fit: BoxFit.scaleDown,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
               ),
             ),
-            createStartButton(),
+            Padding(
+                padding: const EdgeInsets.only(top: 16.0, right: 16, bottom: 36, left: 16),
+                child: createStartButton(),
+            ),
           ],
         )
       )
@@ -101,7 +108,10 @@ class _OnBoardingState extends State<OnBoardingStatefulWidget> {
           ))
       ),
       onPressed: () {
-
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
       },
       child: Text(
         AppLocalizations.of(context)?.buttonStart ?? "",

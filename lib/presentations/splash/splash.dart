@@ -57,16 +57,14 @@ class _MySplashScreenState extends State<MySplashScreen> {
           statusBarBrightness: Brightness.light,
         ),
       ),
-      body: const SafeArea(
-        child: Column(
-          children: [
-            Image(
-              image: AssetImage('assets/images/onboarding.png'),
-              fit: BoxFit.scaleDown,
-              width: double.infinity,
-              height: double.infinity,
-            ),
-          ],
+      body: SafeArea(
+        child: Expanded(
+          child: Image(
+            image: const AssetImage('assets/images/splash.png'),
+            fit: BoxFit.fill,
+            width: MediaQuery.of(context).size.width,
+            height: double.infinity,
+          ),
         )
       ),
     );
