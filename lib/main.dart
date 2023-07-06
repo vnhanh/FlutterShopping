@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/presentations/splash/onboarding.dart';
-import 'package:shopping/presentations/splash/splash.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shopping/presentations/splash/splash.dart';
 
 void main() {
   runApp(const SplashScreen());
-  // runApp(const OnBoardingScreen());
 }
 
 class SAppWrapperLayout extends StatefulWidget {

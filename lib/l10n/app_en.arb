@@ -3,5 +3,11 @@
   "@onBoardingWelcome": {
     "description": "welcome message of On-Boarding screen"
   },
-  "buttonStart": "Start"
+  "buttonStart": "Start",
+  "loginTitle": "Signin",
+  "loginEmailHint": "Enter your email",
+  "loginPasswordHint": "Enter your password",
+  "loginButton": "SIGN IN",
+  "loginRegisterDescription": "You don't have account ?",
+  "loginRegisterLink": "Register"
 }

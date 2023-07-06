@@ -30,8 +30,9 @@ class _OnBoardingState extends State<OnBoardingStatefulWidget> {
   @override
   void initState() {
     super.initState();
-    // WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-    // });
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    });
   }
 
   @override
@@ -40,6 +41,7 @@ class _OnBoardingState extends State<OnBoardingStatefulWidget> {
       appBar: AppBar(
         toolbarHeight: 0,
         elevation: 0,
+        backgroundColor: Colors.white,
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark, // for Android

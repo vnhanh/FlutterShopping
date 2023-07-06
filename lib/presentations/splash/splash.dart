@@ -32,7 +32,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       // only hide status bar
       // SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-      sleep(const Duration(seconds: 2));
+      sleep(const Duration(seconds: 5));
 
       Navigator.push(
         context,
@@ -58,13 +58,8 @@ class _MySplashScreenState extends State<MySplashScreen> {
         ),
       ),
       body: SafeArea(
-        child: Expanded(
-          child: Image(
-            image: const AssetImage('assets/images/splash.png'),
-            fit: BoxFit.fill,
-            width: MediaQuery.of(context).size.width,
-            height: double.infinity,
-          ),
+        child: SizedBox.expand(
+          child: generateContent(),
         )
       ),
     );
@@ -72,8 +67,8 @@ class _MySplashScreenState extends State<MySplashScreen> {
 
   Widget generateContent() {
     return Image.asset(
-      'assets/images/splash.png',
-      fit: BoxFit.cover,
+      'assets/images/onboarding.png',
+      fit: BoxFit.fill,
       width: double.infinity,
       height: double.infinity,
     );

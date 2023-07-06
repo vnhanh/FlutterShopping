@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shopping/main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shopping/app/theme/SAppTypography.dart';
+import 'package:shopping/app/theme/SColors.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -25,26 +28,66 @@ class _LoginScreenState extends State<LoginScreenStatefulWidget> {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarBrightness: Brightness.light,
-            statusBarIconBrightness: Brightness.dark,
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              statusBarColor: Colors.white,
+              statusBarBrightness: Brightness.light,
+              statusBarIconBrightness: Brightness.dark,
+            ),
+            toolbarHeight: 40,
+            title: Center(
+                child: Text(
+                    AppLocalizations.of(context)?.loginTitle ?? "SIGNIN",
+                    textAlign: TextAlign.center,
+                    style: mobileHeadlineMediumM.copyWith(color: white),
+                ),
+            )
           ),
-        ),
-        body: SafeArea(
-          child: Column(
-            children: [
-              Image.asset(
-                  'assets/images/bg_login.jpg',
-                  fit: BoxFit.scaleDown,
-                  width: MediaQuery.of(context).size.width,
-                  height: 300,
+          body: SafeArea(
+              child: Column(
+                  children: [
+                      topImage(),
+                      inputFields(),
+                  ],
               ),
-              const Text("Login"),
-            ],
           ),
-        ),
       );
+  }
+
+  Widget topImage() {
+    return Image.asset(
+      'assets/images/img_login_top.jpg',
+      fit: BoxFit.scaleDown,
+      width: MediaQuery.of(context).size.width,
+      height: 300,
+    );
+  }
+
+  Widget inputFields() {
+    return Column(
+        children: [
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: TextField(
+                    decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.account_box),
+                        border: const OutlineInputBorder(),
+                        hintText: AppLocalizations.of(context)?.loginEmailHint ?? ""
+                    ),
+                ),
+            ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: TextField(
+                  decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.lock),
+                      border: const OutlineInputBorder(),
+                      hintText: AppLocalizations.of(context)?.loginPasswordHint ?? ""
+                  ),
+              ),
+          )
+        ],
+    );
   }
 }

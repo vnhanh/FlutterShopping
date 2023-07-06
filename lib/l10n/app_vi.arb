@@ -9,5 +9,11 @@
       }
     }
   },
-  "buttonStart": "Bắt đầu"
+  "buttonStart": "Bắt đầu",
+  "loginTitle": "Đăng nhập",
+  "loginEmailHint": "Nhập email của bạn",
+  "loginPasswordHint": "Nhập mật khẩu",
+  "loginButton": "ĐĂNG NHẬP",
+  "loginRegisterDescription": "Bạn chưa có tài khoản ?",
+  "loginRegisterLink": "Đăng ký ngay"
 }
