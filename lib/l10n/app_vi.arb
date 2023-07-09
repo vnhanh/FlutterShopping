@@ -15,5 +15,7 @@
   "loginPasswordHint": "Nhập mật khẩu",
   "loginButton": "ĐĂNG NHẬP",
   "loginRegisterDescription": "Bạn chưa có tài khoản ?",
-  "loginRegisterLink": "Đăng ký ngay"
+  "loginRegisterLink": "Đăng ký ngay",
+  "loginEmailInvalid": "Email không hợp lệ",
+  "loginPasswordInvalid": "Mật khẩu phải có ít nhất 6 ký tự, trong đó ít nhất 1 ký tự in hoa, 1 ký tự thường và 1 con số"
 }

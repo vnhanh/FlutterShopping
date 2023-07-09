@@ -9,5 +9,7 @@
   "loginPasswordHint": "Enter your password",
   "loginButton": "SIGN IN",
   "loginRegisterDescription": "You don't have account ?",
-  "loginRegisterLink": "Register"
+  "loginRegisterLink": "Register",
+  "loginEmailInvalid": "Email is invalid",
+  "loginPasswordInvalid": "Password must be at least 6 characters in length and must have at least 1 uppercase character 1 lowercase character and 1 number"
 }
