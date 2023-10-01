@@ -6,6 +6,8 @@ import 'dart:io';
 import 'package:shopping/presentations/splash/onboarding.dart';
 import 'package:shopping/main.dart';
 
+import '../../app/navigation/AuthNavigation.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -34,10 +36,11 @@ class _MySplashScreenState extends State<MySplashScreen> {
       // SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
       sleep(const Duration(seconds: 5));
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
-      );
+      navigateLogin(context);
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => const OnBoardingScreen()),
+      // );
     });
   }
 

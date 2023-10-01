@@ -29,3 +29,15 @@ const mobileTitleMediumSemiBold = TextStyle(
   height: 1.25,
   fontWeight: FontWeight.w600,
 );
+
+const mobileLabelMedium = TextStyle(
+  fontSize: 16,
+  height: 1.25,
+  fontWeight: FontWeight.w400,
+);
+
+const mobileLabelLarge = TextStyle(
+  fontSize: 20,
+  height: 1.25,
+  fontWeight: FontWeight.w500,
+);

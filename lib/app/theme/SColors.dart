@@ -13,3 +13,7 @@ const colorRed500 = Color(0xFFFF0000);
 const success500 = Color(0xFF22C55E);
 
 const warning500 = Color(0xFFF59E0B);
+
+const color_11161D = Color(0xFF11161D);
+const color_374151 = Color(0xFF374151);
+const color_1966DC = Color(0xFF1966DC);
