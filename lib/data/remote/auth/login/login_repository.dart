@@ -9,7 +9,7 @@ import '../../base/models.dart';
 import 'models/login_response.dart';
 
 Future<Either<ApiError, LoginResponse>> loginWithPassword(String phone, String password) async {
-  final response = await http.post(
+  final http.Response response = await http.post(
     Uri.parse("${authBaseUrl}auth/login"),
     headers: <String,String>{
       'Content-Type': 'application/json; charset=UTF-8',
@@ -20,7 +20,7 @@ Future<Either<ApiError, LoginResponse>> loginWithPassword(String phone, String p
     })
   );
 
-  if (response.statusCode < 300) {
+  if (response.statusCode == 200) {
     final json = jsonDecode(response.body);
     print("Alan - json ${json}");
     BaseResponse<LoginResponse> parsedResponse = BaseResponse<LoginResponse>.fromJson(json, () => LoginResponse.fromJson(json['result']));

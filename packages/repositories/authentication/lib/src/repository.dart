@@ -1,6 +1,6 @@
 import 'dart:async';
 
-enum AuthenticationStatus { unkown, unauthenticated, authenticated }
+enum AuthenticationStatus { unknown, unauthenticated, authenticated }
 
 class AuthenticationRepository {
   final _controller = StreamController<AuthenticationStatus>();
@@ -19,6 +19,10 @@ class AuthenticationRepository {
       const Duration(milliseconds: 300),
         () => _controller.add(AuthenticationStatus.authenticated),
     );
+  }
+
+  void logOut() {
+    _controller.add(AuthenticationStatus.unauthenticated);
   }
 
   void dispose() => _controller.close();

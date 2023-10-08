@@ -1,12 +1,14 @@
-import 'package:equatable/equatable.dart';
+import 'models/models.dart';
 
-class User extends Equatable {
-  const User(this.id);
+class UserRepository {
+  User? _user;
 
-  final String id;
+  Future<User?> getUser() async {
+    if (_user != null) return _user;
 
-  @override
-  List<Object?> get props => [id];
-
-  static const empty = User('-');
+    return Future.delayed(
+      const Duration(milliseconds: 500),
+        () => _user = User('id_test'),
+    );
+  }
 }
