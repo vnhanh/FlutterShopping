@@ -7,7 +7,7 @@ import 'package:shopping/app/navigation/AuthNavigation.dart';
 import '../../../main.dart';
 import '../../../app/theme/SAppTypography.dart';
 import '../../../app/theme/SColors.dart';
-import '../../../app/common/ImagePaths.dart';
+import '../../../app/common/images.dart';
 import '../../../data/remote/auth/login/login_repository.dart';
 import '../../../data/remote/auth/login/models/login_response.dart';
 
@@ -38,9 +38,9 @@ class _LoginScreenState extends State<LoginScreenStatefulWidget> {
   void _submit() {
     if (_formKey.currentState?.validate() == true) {
       showLoading();
-      setState(() {
-        _loginResponse = loginWithPassword(_phone, _password);
-      });
+      // setState(() {
+      //   _loginResponse = loginWithPassword(_phone, _password);
+      // });
     }
   }
 
