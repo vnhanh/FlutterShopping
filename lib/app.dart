@@ -20,20 +20,6 @@ class App extends StatefulWidget {
 
   @override
   State<App> createState() => _AppState();
-  
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'Flutter Demo',
-  //     theme: ThemeData(
-  //       primarySwatch: Colors.blue
-  //     ),
-  //     home: BlocProvider<CounterBloc>(
-  //       create: (context) => CounterBloc(),
-  //       child: HomePage(title: ' Flutter Demo Home Page'),
-  //     )
-  //   );
-  // }
 }
 
 class _AppState extends State<App> {
@@ -55,16 +41,6 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   title: 'Flutter Demo',
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.blue
-    //   ),
-    //   home: BlocProvider<LoginBloc>(
-    //     create: (context) => LoginBloc(authenticationRepository: _authenticationRepository),
-    //     child: const AppView(title: 'Demo Flutter',),
-    //   )
-    // );
     return RepositoryProvider.value(
         value: _authenticationRepository,
         child: BlocProvider(
