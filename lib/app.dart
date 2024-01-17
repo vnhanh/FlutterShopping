@@ -1,14 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:shopping/domain/authentication/bloc/authentication_bloc.dart';
 import 'package:authentication_repository/authentication_repository.dart';
-import 'package:shopping/login/bloc/login_bloc.dart';
-import 'package:shopping/sample_counter/counter_bloc.dart';
-import 'package:shopping/sample_counter/counter_event.dart';
-import 'package:shopping/sample_counter/counter_state.dart';
 import 'package:shopping/splash/splash.dart';
 import 'package:user_repository/user_repository.dart';
 
@@ -56,8 +50,6 @@ class _AppState extends State<App> {
 
 class AppView extends StatefulWidget {
   const AppView({super.key});
-
-
   @override
   _AppViewState createState() => _AppViewState();
 }
