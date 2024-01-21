@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/login/view/color_gradient.dart';
 
+import '../../common/widgets/GradientText.dart';
 import 'login_form.dart';
 
 class LoginView extends StatelessWidget {
@@ -49,9 +50,17 @@ class LoginView extends StatelessWidget {
       child: const Column(
         mainAxisSize: MainAxisSize.max,
         children: [
-          Positioned(
-              top: 32.0,
-              child: LoginForm()
+          Padding(
+              padding: EdgeInsets.only(top: 32.0),
+              child: GradientText(
+                "Shop Alan",
+                style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w700, fontSize: 20.0),
+                gradient: LoginGradient.loginBgGradient,
+              )
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
+            child: LoginForm(),
           )
         ],
       ),
