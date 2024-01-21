@@ -1,4 +1,4 @@
-package com.vnhanh.flutter.shopping
+package com.vnhanh.shopping
 
 import io.flutter.embedding.android.FlutterActivity
 
