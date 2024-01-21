@@ -1,9 +1,6 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/login/view/color_gradient.dart';
 
-import '../../common/colors.dart';
 import 'login_form.dart';
 
 class LoginView extends StatelessWidget {
@@ -28,12 +25,7 @@ class LoginView extends StatelessWidget {
       width: double.infinity,
       height: 120.0,
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ShopColor.a675ff,
-            ShopColor.de84ff,
-          ],
-        ),
+        gradient: LoginGradient.loginBgGradient,
       ),
       child: const Align(
         alignment: Alignment.center,

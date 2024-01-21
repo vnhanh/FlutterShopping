@@ -1,16 +1,14 @@
-
 import 'package:flutter/cupertino.dart';
 
 import '../../common/colors.dart';
 
+class LoginGradient {
 
-// extension LoginGradient on LinearGradient {
-//
-//   static const LinearGradient loginBgGradient = LinearGradient(
-//     colors: [
-//       Color_A675FF,
-//       Color_DE84FF,
-//     ],
-//   );
-//
-// }
+  static const LinearGradient loginBgGradient = LinearGradient(
+    colors: [
+      ShopColor.a675ff,
+      ShopColor.de84ff,
+    ],
+  );
+
+}
