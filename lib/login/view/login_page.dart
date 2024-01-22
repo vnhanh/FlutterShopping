@@ -44,18 +44,20 @@ class LoginView extends StatelessWidget {
       width: double.infinity,
       // margin: const EdgeInsets.only(top: 32.0),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0)),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(28.0), topRight: Radius.circular(28.0)),
         color: Colors.white,
       ),
-      child: const Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
+      child: ListView(
+        children: const [
           Padding(
               padding: EdgeInsets.only(top: 32.0),
-              child: GradientText(
-                "Shop Alan",
-                style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w700, fontSize: 20.0),
-                gradient: LoginGradient.loginBgGradient,
+              child: Align(
+                alignment: Alignment.center,
+                child: GradientText(
+                  "Shop Alan",
+                  style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w700, fontSize: 20.0),
+                  gradient: LoginGradient.loginBgGradient,
+                ),
               )
           ),
           Padding(
