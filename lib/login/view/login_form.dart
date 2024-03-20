@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:shopping/common/colors.dart';
 import 'package:shopping/login/bloc/login_bloc.dart';
+import 'package:shopping/login/view/color_gradient.dart';
 
 
 class LoginForm extends StatelessWidget {
@@ -27,7 +29,7 @@ class LoginForm extends StatelessWidget {
               _UsernameInput(),
               const Padding(padding: EdgeInsets.all(12),),
               _PasswordInput(),
-              const Padding(padding: EdgeInsets.all(12),),
+              const Padding(padding: EdgeInsets.all(32),),
               _LoginButton()
             ],
           ),
@@ -81,14 +83,26 @@ class _LoginButton extends StatelessWidget {
         builder: (context, state) {
           return state.status.isInProgress
               ? const CircularProgressIndicator()
-              : ElevatedButton(
+              : InkWell(
                   key: const Key('loginForm_button'),
-                  onPressed: state.isValid
-                    ? () {
-                      context.read<LoginBloc>().add(const LoginSubmitted());
-                    }
-                    : null,
-                  child: const Text('Login')
+                  splashColor: Colors.white10,
+                  // onPressed: state.isValid
+                  //   ? () {
+                  //     context.read<LoginBloc>().add(const LoginSubmitted());
+                  //   }
+                  //   : null,
+                  onTap: () {
+                    state.isValid ? context.read<LoginBloc>().add(const LoginSubmitted()) : null;
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
+                    decoration: BoxDecoration(
+                      gradient: state.isValid ? LoginGradient.loginBgGradient : null,
+                      color: !state.isValid ? ShopColor.grey300 : null,
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                    ),
+                    child: Text("LOGIN", style: TextStyle(color: state.isValid ? Colors.white : ShopColor.grey500, fontSize: 18.0, fontWeight: FontWeight.w700),),
+                  ),
               );
         }
     );

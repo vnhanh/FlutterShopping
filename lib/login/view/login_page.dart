@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping/login/view/color_gradient.dart';
 
+import '../../common/widgets/GradientText.dart';
 import 'login_form.dart';
 
 class LoginView extends StatelessWidget {
@@ -14,7 +15,7 @@ class LoginView extends StatelessWidget {
       child: Stack(
         children: [
           header(),
-          bodyCard()
+          bodyCard(),
         ],
       ),
     );
@@ -39,19 +40,29 @@ class LoginView extends StatelessWidget {
 
   Widget bodyCard() {
     return Container(
-      margin: const EdgeInsets.only(top: 330.0),
+      margin: const EdgeInsets.only(top: 72.0),
       width: double.infinity,
       // margin: const EdgeInsets.only(top: 32.0),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(32.0), topRight: Radius.circular(32.0)),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(28.0), topRight: Radius.circular(28.0)),
         color: Colors.white,
       ),
-      child: const Column(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Positioned(
-              top: 32.0,
-              child: LoginForm()
+      child: ListView(
+        children: const [
+          Padding(
+              padding: EdgeInsets.only(top: 32.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: GradientText(
+                  "Shop Alan",
+                  style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.w700, fontSize: 20.0),
+                  gradient: LoginGradient.loginBgGradient,
+                ),
+              )
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
+            child: LoginForm(),
           )
         ],
       ),
