@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
       child: Stack(
         children: [
           header(),
-          bodyCard()
+          bodyCard(),
         ],
       ),
     );
@@ -40,7 +40,7 @@ class LoginView extends StatelessWidget {
 
   Widget bodyCard() {
     return Container(
-      margin: const EdgeInsets.only(top: 330.0),
+      margin: const EdgeInsets.only(top: 72.0),
       width: double.infinity,
       // margin: const EdgeInsets.only(top: 32.0),
       decoration: const BoxDecoration(
