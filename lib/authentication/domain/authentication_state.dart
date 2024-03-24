@@ -1,4 +1,4 @@
-part of 'authentication_bloc.dart';
+part of '../../../authentication/domain/authentication_bloc.dart';
 
 
 class AuthenticationState extends Equatable {

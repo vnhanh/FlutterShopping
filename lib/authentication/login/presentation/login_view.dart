@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/authentication/login/view/color_gradient.dart';
+import 'package:shopping/authentication/login/presentation/color_gradient.dart';
 import 'package:shopping/common/widgets/gradient_text.dart';
 import 'login_form.dart';
 

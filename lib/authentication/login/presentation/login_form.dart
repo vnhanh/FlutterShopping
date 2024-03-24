@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:shopping/common/colors.dart';
 import 'package:shopping/authentication/login/domain/bloc/login_bloc.dart';
-import 'package:shopping/authentication/login/view/color_gradient.dart';
+import 'package:shopping/authentication/login/presentation/color_gradient.dart';
 
 
 class LoginForm extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shopping/authentication/login/domain/bloc/login_bloc.dart';
-import 'package:shopping/authentication/login/view/login_page.dart';
+import 'package:shopping/authentication/login/presentation/login_view.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
