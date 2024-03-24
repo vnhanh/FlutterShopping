@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:bloc/bloc.dart';
+import 'package:bloc/bloc.dart' show Bloc, Emitter;
 
 import 'package:shopping/authentication/data/repository/authentication_repository.dart';
 import 'package:shopping/authentication/login/domain/model/password.dart';

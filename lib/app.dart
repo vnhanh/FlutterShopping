@@ -6,7 +6,7 @@ import 'package:shopping/authentication/domain/authentication_bloc.dart';
 import 'package:shopping/authentication/data/repository/authentication_repository.dart';
 import 'package:shopping/splash/splash.dart';
 
-import 'package:shopping/home/home.dart';
+import 'package:shopping/main/main.dart';
 import 'package:shopping/authentication/login/presentation/login_page.dart';
 import 'package:shopping/data/user/user_repository.dart';
 
@@ -67,7 +67,6 @@ class _AppViewState extends State<AppView> {
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
-            print("TestAlan - app ui - status ${state.status}");
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator?.pushAndRemoveUntil<void>(HomePage.route(), (route) => false);
