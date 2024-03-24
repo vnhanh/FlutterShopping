@@ -15,15 +15,55 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Home Page")
-            ],
-          )
-      )
+    return const HomeStateFullWidget();
+  }
+}
+
+class HomeStateFullWidget extends StatefulWidget {
+  const HomeStateFullWidget({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _HomeState();
+}
+
+class _HomeState extends State<HomeStateFullWidget> {
+  int currentPageIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        indicatorColor: Colors.amber,
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
+              label: '',
+          ),
+          NavigationDestination(
+              selectedIcon: Badge(child: Icon(Icons.notifications_sharp)),
+              icon: Badge(child: Icon(Icons.notifications_outlined)),
+              label: '',
+          ),
+          NavigationDestination(
+              selectedIcon: Badge(child: Icon(Icons.message_sharp)),
+              icon: Badge(child: Icon(Icons.message_outlined)),
+              label: '',
+          ),
+          NavigationDestination(
+              selectedIcon: Icon(Icons.account_box_sharp),
+              icon: Icon(Icons.account_box_outlined),
+              label: '',
+          ),
+        ],
+      ),
+
     );
   }
 }

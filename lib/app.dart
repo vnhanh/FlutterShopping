@@ -18,7 +18,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  SharedPreferences? sp;
   late final AuthenticationRepository _authenticationRepository;
   late final UserRepository _userRepository;
 
@@ -68,6 +67,7 @@ class _AppViewState extends State<AppView> {
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
+            print("TestAlan - app ui - status ${state.status}");
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator?.pushAndRemoveUntil<void>(HomePage.route(), (route) => false);

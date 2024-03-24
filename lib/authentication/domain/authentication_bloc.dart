@@ -58,7 +58,7 @@ class AuthenticationBloc
   void _onAuthenticationLogoutRequested(
       AuthenticationLogoutRequested event,
       Emitter<AuthenticationState> emit,
-      ) {
+      ) async {
     _authenticationRepository.logOut();
   }
 
