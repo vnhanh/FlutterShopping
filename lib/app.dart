@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:shopping/domain/authentication/bloc/authentication_bloc.dart';
-import 'package:authentication_repository/authentication_repository.dart';
+import 'package:shopping/authentication/domain/authentication_bloc.dart';
+import 'package:shopping/authentication/data/repository/authentication_repository.dart';
 import 'package:shopping/splash/splash.dart';
-import 'package:user_repository/user_repository.dart';
 
-import 'home/home.dart';
-import 'login/login.dart';
+import 'package:shopping/home/home.dart';
+import 'package:shopping/authentication/login/presentation/login_page.dart';
+import 'package:shopping/data/user/user_repository.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -66,6 +67,7 @@ class _AppViewState extends State<AppView> {
       builder: (context, child) {
         return BlocListener<AuthenticationBloc, AuthenticationState>(
           listener: (context, state) {
+            print("TestAlan - app ui - status ${state.status}");
             switch (state.status) {
               case AuthenticationStatus.authenticated:
                 _navigator?.pushAndRemoveUntil<void>(HomePage.route(), (route) => false);
