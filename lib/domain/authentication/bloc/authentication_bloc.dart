@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:bloc/bloc.dart';
 
-import 'package:authentication_repository/authentication_repository.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:shopping/authentication/data/repository/authentication_repository.dart';
+import 'package:shopping/data/user/model/user.dart';
+import 'package:shopping/data/user/user_repository.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';

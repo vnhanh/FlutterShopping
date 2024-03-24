@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:shopping/domain/authentication/bloc/authentication_bloc.dart';
-import 'package:authentication_repository/authentication_repository.dart';
+import 'package:shopping/authentication/data/repository/authentication_repository.dart';
 import 'package:shopping/splash/splash.dart';
-import 'package:user_repository/user_repository.dart';
 
-import 'home/home.dart';
-import 'login/login.dart';
+import 'package:shopping/home/home.dart';
+import 'package:shopping/authentication/login/login.dart';
+import 'package:shopping/data/user/user_repository.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
