@@ -1,9 +1,9 @@
 
 
 const int STATUS_IDLE = 0;
-const int STATUS_LOADING = 0;
-const int STATUS_SUCCESS = 0;
-const int STATUS_FAILED = 0;
+const int STATUS_LOADING = 1;
+const int STATUS_SUCCESS = 2;
+const int STATUS_FAILED = 3;
 
 sealed class ApiState {
   const ApiState();
