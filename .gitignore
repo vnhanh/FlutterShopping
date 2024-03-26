@@ -1,2 +1,6 @@
 .flutter-plugins
 .flutter-plugins-dependencies
+shopping.iml
+build
+.dart_tool
+.idea
